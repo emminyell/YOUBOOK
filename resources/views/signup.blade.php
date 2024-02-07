@@ -253,7 +253,7 @@
         <div class="login">
             <div class="title">
                 <span>Sign up</span>
-                <p>Welcome back, please login to your account. You can login with facebook, twitter or by your regular
+                <p>Welcome back, please Register to your account. You can login with facebook, twitter or by your regular
                     user login.</p>
             </div>
 
@@ -263,14 +263,25 @@
             </div>
 
             <div class="or"><span>OR</span></div>
+            @if ($errors->any())
+            <div>
+            <div>ERRORR</div>
+        <ul>
+        @foreach ($errors->all() as $error)
+            <li style="list-style-type: none; color:red;">{{ $error }} </li>
+        @endforeach
+        </ul>
+        </div>
+        @endif
 
-            <form method="post" >
+            <form method="post" action="{{route('register')}}" >
+            @csrf
                 <input type="text" placeholder="Username" name="name">
                 <input type="text" placeholder="Email" name="email">
                 <input type="password" placeholder="Password" name="password">
                 <input type="checkbox" id="remember">
                 <label for="remember">Keep me sign in</label>
-                <button type="submit" name="signin" class="btn btn-primary btn-signin">Sign In</button>
+                <button type="submit" name="signup" class="btn btn-primary btn-signin">Sign In</button>
                 <a href="" class="btn-reset btn-fade">Recover your password <i class="fa fa-long-arrow-right"
                                                                                 aria-hidden="true"></i></a>
                 <a href="" class="btn-member btn-fade">Not a member yet? <i class="fa fa-long-arrow-right"

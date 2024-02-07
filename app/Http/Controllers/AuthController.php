@@ -18,6 +18,7 @@ class AuthController extends Controller
     }
     public function register(Request $request)
     {
+
         $request->validate([
             'name'=> 'required',
             'email'=> 'required|email|unique:users',
@@ -28,7 +29,6 @@ class AuthController extends Controller
             'name'=> $request->input('name'),
             'email'=> $request->input('email'),
             'password'=> Hash::make($request->input('password')),
-            'isAdmin' => false,
         ]);
         session(['user' => $user]); 
 
