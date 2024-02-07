@@ -9,4 +9,8 @@ class Book extends Model
 {
     use HasFactory;
     protected $fillable = ['title', 'description','status'];
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class, 'id_book');
+    }
 }

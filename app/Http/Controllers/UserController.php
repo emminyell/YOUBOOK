@@ -1,17 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers;
+use App\Models\Reservation;
+use Illuminate\Http\Request;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-
-class User extends Authenticatable
+class UserController extends Controller
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -40,7 +34,9 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
+
 
     public function reservations()
     {

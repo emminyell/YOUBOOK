@@ -17,7 +17,7 @@ class CreateBooksTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->enum('status', ['reserved', 'available'])->default('available');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

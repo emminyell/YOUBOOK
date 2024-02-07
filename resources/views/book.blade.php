@@ -9,22 +9,29 @@
                     <div class="card h-100 border border-2 border-primary rounded-3 shadow">
                         <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' class="card-img-top" alt="Book Image">
                         <div class="card-body">
-                            <h5 class="card-title">{{ $book->title }}</h5>
+                            <h5 class="card-title" >{{ $book->title }}</h5>
                             <p class="card-text">{{ $book->description }}</p>
                             <p>Status: {{ $book->status }}</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
                             <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateModal{{ $book->id }}">Edit</button>
+                            
+                            <!-- <form action="{{ route('status', $book->id) }}" method="post">
+                            @method('GET')
+                            @csrf
+                            @if ($book->status == 1)
+                                <button type="submit" class="btn btn-outline-warning">Avaibale</button>
+                            @else
+                                <button type="submit" class="btn btn-outline-warning">Reserved</button>
+                            @endif
+                        </form> -->
+                        <a href="{{ route('book.details', ['id' => $book->id]) }}" class="btn btn-light">Details</a>
+
                             <form action="{{ route('delete', $book->id) }}" method="post">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-outline-danger">Delete</button>
                             </form>
-
-                            <!-- <form action="{{ route('reserver', $book->id) }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-danger">Reserver</button>
-                            </form> -->
                         </div>
                     </div>
                 </div>
@@ -51,8 +58,6 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary">Update Book</button>
                                 </form>
-                                <form action="{{ route('reserve', $book->id) }}" method="POST">
-
                             </div>
                         </div>
                     </div>
