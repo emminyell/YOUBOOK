@@ -36,7 +36,7 @@ class BookController extends Controller
     }
     public function show()
     {
-        $books = Book::all();
+        $books = Book::paginate(3);
         return view('book', compact('books'));
     }
     public function home()

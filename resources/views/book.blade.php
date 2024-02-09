@@ -61,6 +61,7 @@
                 </div>
             @endforelse
         </div>
+        {{ $books->links() }}
     </div>
 @endsection
 </body>
