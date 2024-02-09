@@ -19,7 +19,7 @@ class BookController extends Controller
             "title" => $request->title,
             "description"=> $request->description,
         ]);
-        return redirect()->route("add");  
+        return redirect()->route("add");
     }
 
 
@@ -38,7 +38,7 @@ class BookController extends Controller
     {
         $books = Book::all();
         return view('book', compact('books'));
-    } 
+    }
     public function home()
     {
         $books = Book::all();
@@ -75,14 +75,12 @@ class BookController extends Controller
 
 public function reserveBook($bookId)
 {
-
     $book = new Reservation();
-
     $book->id_book = $bookId;
     $book->id_user = 1;
     $book->save();
 
-    return redirect()->route('reservations')->with('success', 'Book reserved successfully.');
+    return redirect()->route('reservations');
 }
 
 public function reservedBooks()

@@ -2,10 +2,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 
 <style>
-    /**
- * Created by Muhammed Erdem on 10.10.2017.
- */
-
 @import url('https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700&subset=latin-ext');
 * {
     -webkit-box-sizing: border-box;
@@ -67,7 +63,7 @@
 }
 
 .btn-face {
-    background: #5397d7;
+    background: #014788;
     margin-right: 25px;
 }
 
@@ -284,12 +280,12 @@
                 <button type="submit" name="signup" class="btn btn-primary btn-signin">Sign In</button>
                 <a href="" class="btn-reset btn-fade">Recover your password <i class="fa fa-long-arrow-right"
                                                                                 aria-hidden="true"></i></a>
-                <a href="" class="btn-member btn-fade">Not a member yet? <i class="fa fa-long-arrow-right"
+                <a href="{{route('signin')}}" class="btn-member btn-fade">Are you already a member? <i class="fa fa-long-arrow-right"
                                                                              aria-hidden="true"></i></a>
             </form>
         </div>
 
-       
+
         <!-- <div class="recover-password">
             <div class="title">
                 <span>Recover Password</span>

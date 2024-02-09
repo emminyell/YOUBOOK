@@ -1,22 +1,29 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="{{ asset('css/style.scss') }}">
 @section('content')
-
-<div class="container mt-5">
-    <div class="d-flex justify-content-center">
-        <div class="card" style="width: 24rem;">
-        <img src="http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-                <h3 class="card-title fw-bold">{{ $book->title }}</h3>
-                <p class="card-text">{{ $book->description }}</p>
-                <form action="{{ route('reserve.book', $book->id) }}" method="post">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">Reserve</button>
-                    </form>
-                <a href="/" class="btn btn-light">Back</a>
-            </div>
+    <section class="hero" id="home" aria-label="hero">
+        <div class="book_des">
+    <div class="book-detail">
+        <div class="cover">
+          <div class="img-wrapper">
+            <img src="http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg">
+          </div>
+          <div class="author-wrapper">
+            <span>Oscar Wilde</span>
+          </div>
         </div>
+        <div class="content">
+          <h2 class="title">{{ $book->title }}</h2>
+          <p>
+            {{ $book->description }}
+        </p>
+        <form action="{{ route('reserve.book', $book->id) }}" method="post">
+            @csrf
+            <button type="submit" class="btn btn" style="background-color:hsl(235, 70%, 60%);">Reserve</button>
+        </form>
+    <a href="/" class="btn btn-light">Back</a>
+        </div>
+      </div>
     </div>
-</div>
-
-@endsection
+    </section>
+ @endsection

@@ -30,21 +30,21 @@ class AuthController extends Controller
             'email'=> $request->input('email'),
             'password'=> Hash::make($request->input('password')),
         ]);
-        session(['user' => $user]); 
+        session(['user' => $user]);
 
-        return redirect()->route('signin'); 
- 
+        return redirect()->route('signin');
+
      }
 
     public function login(Request $request)
     {
-        $user = User::where('email', $request->email)->first(); 
+        $user = User::where('email', $request->email)->first();
 
-        if ($user && Hash::check($request->password, $user->password)) { 
+        if ($user && Hash::check($request->password, $user->password)) {
 
-            session(['user' => $user]); 
+            session(['user' => $user]);
 
-            return redirect()->route('reservations'); 
+            return redirect()->route('reservations');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials']);
@@ -52,9 +52,9 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->session()->forget('user'); 
+    $request->session()->invalidate();
 
-        return redirect()->route('home'); 
+        return redirect()->route('home');
     }
 }
 
@@ -93,4 +93,4 @@ class AuthController extends Controller
     //         ? redirect()->route('login')->with('status', __($status))
     //         : back()->withErrors(['email' => [__($status)]]);
     // }
-    
+

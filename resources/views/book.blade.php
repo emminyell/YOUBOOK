@@ -1,6 +1,8 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="{{ asset('css/style.scss') }}">
 
 @section('content')
+<body>
     <div class="container">
         <h2 style="font-family: 'Indie Flower', cursive;">All Books</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -11,20 +13,9 @@
                         <div class="card-body">
                             <h5 class="card-title" >{{ $book->title }}</h5>
                             <p class="card-text">{{ $book->description }}</p>
-                            <p>Status: {{ $book->status }}</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
                             <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#updateModal{{ $book->id }}">Edit</button>
-                            
-                            <!-- <form action="{{ route('status', $book->id) }}" method="post">
-                            @method('GET')
-                            @csrf
-                            @if ($book->status == 1)
-                                <button type="submit" class="btn btn-outline-warning">Avaibale</button>
-                            @else
-                                <button type="submit" class="btn btn-outline-warning">Reserved</button>
-                            @endif
-                        </form> -->
                         <a href="{{ route('book.details', ['id' => $book->id]) }}" class="btn btn-light">Details</a>
 
                             <form action="{{ route('delete', $book->id) }}" method="post">
@@ -72,5 +63,5 @@
         </div>
     </div>
 @endsection
-
+</body>
 
