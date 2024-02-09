@@ -11,7 +11,7 @@
                     <div class="card h-100 border border-2 border-primary rounded-3 shadow">
                         <img src='http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg' class="card-img-top" alt="Book Image">
                         <div class="card-body">
-                            <h5 class="card-title" >{{ $book->title }}</h5>
+                            <h2 class="card-title" >{{ $book->title }}</h2>
                             <p class="card-text">{{ $book->description }}</p>
                         </div>
                         <div class="card-footer bg-transparent border-0 d-flex justify-content-between align-items-center">
