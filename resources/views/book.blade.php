@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('css/style.scss') }}">
 
 @section('content')
-<body>
+<main class="main">
     <div class="container">
         <h2 style="font-family: 'Indie Flower', cursive;">All Books</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -64,5 +64,5 @@
         {{ $books->links() }}
     </div>
 @endsection
-</body>
+</main>
 

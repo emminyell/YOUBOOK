@@ -1,23 +1,24 @@
 /*-----------------------------------*\
   #style.css
 \*-----------------------------------*/
+.main{
+    padding-top: 80Px;
+    padding-bottom:90px;
+}
 body {
   background: #fde3a7;
-  padding-top: 80Px;
-  padding-bottom:90px;
 }
 
 /*-----------------------------------*\
   #description
 
 \*-----------------------------------*/
-.book_des{
-    h2 {
-      font-size: 16px;
-      text-align: center;
-      color: #666;
-    }
-
+h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color:hsl(235, 70%, 60%);
+}
     p {
       word-break: break-all;
       text-indent: 1.5em;
@@ -26,31 +27,12 @@ body {
       color: #888;
     }
 
-
-  }
-
   .cover {
-    width: 45%; height: 100%;
+    width: 50%; height: 550px;
     border-radius: 20px;
 
-    .author-wrapper {
-      width: 100%;
-      margin: 0 auto;
-      cursor: pointer;
-
-
-
-      span {
-        margin-left: 10px;
-        font-size: 16px;
-        font-weight: bolder;
-        color: #666;
-        line-height: 30px;
-      }
-    }
-
     .img-wrapper {
-      width: 40%; height: 80%;
+      width: 48%; height: 80%;
       position: relative;
 
       img {
@@ -63,12 +45,15 @@ body {
 
   .book-detail {
     display: flex;
-    width: 100%; height: 350px; min-width: 600px;
+    width: 100%; height: 500px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
     position: relative;
-    left: 50%; top: 50%; transform: translate(-50%, -50%);
+  }
+  .content{
+    width: 100%; height: 550px;
+
   }
 
 

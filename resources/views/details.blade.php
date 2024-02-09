@@ -1,15 +1,13 @@
 @extends('layouts.app')
 <link rel="stylesheet" href="{{ asset('css/style.scss') }}">
 @section('content')
+<main class="main">
+
     <section class="hero" id="home" aria-label="hero">
-        <div class="book_des">
     <div class="book-detail">
         <div class="cover">
           <div class="img-wrapper">
             <img src="http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg">
-          </div>
-          <div class="author-wrapper">
-            <span>Oscar Wilde</span>
           </div>
         </div>
         <div class="content">
@@ -27,3 +25,4 @@
     </div>
     </section>
  @endsection
+</main>

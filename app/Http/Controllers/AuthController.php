@@ -44,7 +44,7 @@ class AuthController extends Controller
 
             session(['user' => $user]);
 
-            return redirect()->route('reservations');
+            return redirect()->route('home');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials']);

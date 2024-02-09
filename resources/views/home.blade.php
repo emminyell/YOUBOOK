@@ -22,7 +22,7 @@
 
               <p class="section-subtitle">Better Learning Future With Us</p>
 
-              <h2 class="h1 hero-title">Education Is About Academic Excellence</h2>
+              <h2 class="h1 hero-title">Your Reading journey Start With Us</h2>
 
               <p class="hero-text">
                 Sed eu volutpat arcu, a tincidunt nulla quam, feugiat sit amet ipsum a, dapibus porta velit.
@@ -273,7 +273,7 @@
 
               <p class="section-subtitle">Who We Are</p>
 
-              <h2 class="h2 section-title">We Offer The Best Carrier</h2>
+              <h2 class="h2 section-title">We Offer The Best Book</h2>
 
               <ul class="about-list">
 
@@ -299,7 +299,7 @@
                   </div>
 
                   <div>
-                    <h3 class="h3 item-title">Up-to-Date Course Content</h3>
+                    <h3 class="h3 item-title">Up-to-Date Book Content</h3>
 
                     <p class="item-text">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, eiusmoded tempor incididunt dolore magna
@@ -350,9 +350,9 @@
           style="background-image: url('./assets/images/course-bg.jpg')">
           <div class="container">
 
-            <p class="section-subtitle">Popular Courses</p>
+            <p class="section-subtitle">Popular Books</p>
 
-            <h2 class="h2 section-title">Our Popular Courses</h2>
+            <h2 class="h2 section-title">Our Popular Books</h2>
 
             <ul class="grid-list">
 
@@ -381,7 +381,7 @@
                       <li class="card-meta-item">
                         <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                        <span class="card-meta-text">35 Lessons</span>
+                        <span class="card-meta-text">35 Books</span>
                       </li>
 
                       <li class="card-meta-item">
@@ -456,7 +456,7 @@
                       <li class="card-meta-item">
                         <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                        <span class="card-meta-text">48 Lessons</span>
+                        <span class="card-meta-text">48 Books</span>
                       </li>
 
                       <li class="card-meta-item">
@@ -529,7 +529,7 @@
                       <li class="card-meta-item">
                         <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                        <span class="card-meta-text">80 Lessons</span>
+                        <span class="card-meta-text">80 Books</span>
                       </li>
 
                       <li class="card-meta-item">
@@ -604,7 +604,7 @@
                       <li class="card-meta-item">
                         <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                        <span class="card-meta-text">31 Lessons</span>
+                        <span class="card-meta-text">31 Books</span>
                       </li>
 
                       <li class="card-meta-item">
@@ -679,7 +679,7 @@
                       <li class="card-meta-item">
                         <ion-icon name="reader-outline" aria-hidden="true"></ion-icon>
 
-                        <span class="card-meta-text">36 Lessons</span>
+                        <span class="card-meta-text">36 Books</span>
                       </li>
 
                       <li class="card-meta-item">

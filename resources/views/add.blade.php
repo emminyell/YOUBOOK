@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('css/style.scss') }}">
 
 @section('content')
-<body>
+<main class="main">
     <section class="add_book">
     <div class="book-list container">
         <div class="row">
@@ -28,4 +28,4 @@
     </div>
 </section>
 @endsection
-<body>
+</main>

@@ -40,7 +40,7 @@
               </li>
 
               <li class="navbar-item">
-                <a href="{{route('add')}}" class="navbar-link" data-nav-toggler>Add Book</a>
+                <a href="" class="navbar-link" data-nav-toggler>Blog</a>
               </li>
 
               <li class="navbar-item">
@@ -56,6 +56,12 @@
               <ion-icon name="search-outline"></ion-icon>
             </button>
             @if(session()->has('user'))
+            <li class="navbar-item">
+                <a href="{{route('add')}}" class="navbar-link" data-nav-toggler>Add Book</a>
+              </li>
+              <li class="navbar-item">
+                <a href="{{route('reservations')}}" class="navbar-link" data-nav-toggler>My reservation</a>
+              </li>
             <a href="{{route('logout')}}" class="header-action-btn login-btn">
               <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
@@ -123,7 +129,7 @@
 
         <div class="footer-brand">
 
-          <a href="#" class="logo">EduHome</a>
+          <a href="#" class="logo">YOUBOOK</a>
 
           <p class="section-text">
             It is a long established fact that a reader will be distracted by the readable content of a page when
@@ -302,7 +308,7 @@
           <li class="footer-item">
             <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
 
-            <a href="mailto:contact@eduhome.com" class="footer-link">contact@eduhome.com</a>
+            <a href="mailto:contact@eduhome.com" class="footer-link">contact@YOUBOOK.com</a>
           </li>
 
         </ul>
@@ -311,7 +317,7 @@
 
       <div class="footer-bottom">
         <p class="copyright">
-          Copyright 2022 EduHome. All Rights Reserved by <a href="#" class="copyright-link">codewithsadee</a>
+          Copyright 2024 All Rights Reserved by
         </p>
       </div>
 
