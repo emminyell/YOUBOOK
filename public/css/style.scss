@@ -59,12 +59,183 @@ h2 {
 
   /*-----------------------------------*\
   #add book
+  \*-----------------------------------*/
+  @import url('https://fonts.googleapis.com/css?family=Questrial');
+
+
+  /* ---- Block ---- */
+  .controller-grid {
+    margin: 100px auto;
+    max-width: 540px;
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    box-shadow: 2px 5px 20px rgba($gray, .5);
+    max-height: 400px;
+  }
+
+  .delete {
+    float: right;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    grid-gap: 20px;
+  }
+
+  .booklist-grid {
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-auto-rows: minmax(50px, auto);
+   grid-column: 5 / 13;
+   grid-row: 2 / 3;
+  }
+
+  .booklist {
+   background: #eee;
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   grid-auto-rows: minmax(50px, 1fr);
+   grid-column: 1 / 12;
+   grid-row: 2;
+   overflow: scroll;
+   max-height: 250px;
+   min-height: 250px;
+  }
+
+  .fa-book {
+    color: hsl(235, 70%, 60%);
+    font-size: 32px;
+  }
+
+  .nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  grid-gap: 10px;
+  }
+
+  /* ---- Element ---- */
+  .booklist-grid__header {
+    color: hsl(235, 70%, 60%);
+    font-weight: bold;
+    font-size: 1.5em;
+    grid-column: 3 / 13;
+    grid-row: 1 / 2;
+  }
+
+  .booklist__item {
+    grid-column: 1 / 13;
+    line-height: 3.0;
+  }
+
+  .controller-grid__header {
+    grid-column: 5 / 13;
+    grid-row: 2 / 2;
+    color: hsl(235, 70%, 60%);
+  }
+
+  .controller-grid__form {
+    grid-column: 5 / 13;
+    grid-row: 3 / 7;
+  }
+
+  .controller-grid__nav {
+    position: relative;
+    height: 450px;
+    top: -22px;
+    background: hsl(235, 70%, 60%);
+    grid-column: 2 / 4;
+    grid-row: 1 / 8;
+    box-shadow: 2px 5px 20px rgba($gray, .5);
+  }
+
+  .form-grid__title-label {
+    grid-column: 1 / 13;
+    grid-row: 1
+  }
+
+  .form-grid__title-input {
+    grid-column: 1 / 10;
+    grid-row: 2
+  }
+
+
+  .form-grid__year-label {
+    grid-column: 1 / 10;
+    grid-row: 3
+  }
+
+  .form-grid__year-input {
+    grid-column: 1 / 10;
+    grid-row: 4
+  }
+
+  .form-grid__isbn-label {
+    grid-column: 1 / 10;
+    grid-row: 5
+  }
+
+  .form-grid__isbn-input {
+    grid-column: 1 / 10;
+    grid-row: 6
+  }
+
+  .form-grid__submit {
+    grid-column: 3 / 8;
+    grid-row: 8 / 10;
+    outline: none;
+    background: hsl(235, 70%, 60%);
+    border: none;
+    color: white;
+  }
+
+
+  input.form-grid__item {
+    border: none;
+    outline: none;
+    background: linear-gradient(to right, #3FB6A8, hsl(235, 70%, 60%)) left bottom no-repeat;
+    background-size: 100% 1px;
+  }
+
+  label.form-grid__item {
+    font-size: 0.8em;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0.4
+  }
+
+  .nav-grid__item {
+    font-size: 40px;
+    grid-column: 1 / 4;
+    justify-self: center;
+    color: white;
+  }
+
+  .nav-grid__pencil {
+    grid-row: 2 / 3;
+  }
+
+  .nav-grid__book {
+    grid-row: 3 / 4;
+  }
+
+  /* ---- Modifier ---- */
+  .display--none {
+    display: none;
+  }
+
+
+
+
+
+/*-----------------------------------*\
+  #list books
 
 \*-----------------------------------*/
-.add_book{
-    padding-top: 80Px;
-    padding-bottom:90px;
-}
 ul {
   display: table-cell;
   vertical-align: middle;

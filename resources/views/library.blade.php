@@ -8,5 +8,24 @@
         <p class="lead"></p>
     </div>
 </div>
+<div>
+    <h2>Disponible Books</h2>
+    @foreach ($disponibleBooks as $book)
+        <p>{{ $book->title }}</p>
+    @endforeach
+</div>
+
+<div>
+    <h2>Reserved Books</h2>
+    @foreach ($reservedBooks as $reservation)
+        @php
+            $endDate = \Carbon\Carbon::parse($reservation->end_date);
+        @endphp
+        <p>Book: {{ $reservation->book->title }} - End Date: {{ $endDate->format('Y-m-d') }} - Reserved by: {{ $reservation->user->name }}</p>
+    @endforeach
+</div>
+
+
+
 @endsection
 </main>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,9 @@ Route::post('/books', [BookController::class, 'store'])->name('store');
 
 Route::get('/add', function(){return view('add');})->name('add');
 
-Route::get('/Mylibrary', function(){return view('library');})->name('library');
+Route::get('/library', function(){return view('library');})->name('library');
+Route::get('/library', [BookController::class, 'library'])->name('library');
+
 
 Route::get('/allbooks', [BookController::class, 'show'])->name('afficher');
 
@@ -50,6 +53,9 @@ Route::post('/reserve/{id}', [BookController::class, 'reserveBook'])->name('rese
 Route::get('/reservations', [BookController::class, 'reservedBooks'])->name('reservations');
 
 Route::post('/unreserve/{id}', [BookController::class, 'unreserveBook'])->name('unreserve.book');
+
+Route::get('/notification', function(){return view('notification');})->name('notification');
+Route::get('/notifications', [NotificationController::class, 'index'])->name('notification');
 
 Route::fallback(function () {
     return view('404');

@@ -36,9 +36,11 @@
               </li>
 
               <li class="navbar-item">
-                <a href="{{route('afficher')}}" class="navbar-link" data-nav-toggler>library</a>
+                <a href="{{route('afficher')}}" class="navbar-link" data-nav-toggler>All Books</a>
               </li>
-
+              <li class="navbar-item">
+                <a href="{{route('library')}}" class="navbar-link" data-nav-toggler>library</a>
+              </li>
               <li class="navbar-item">
                 <a href="" class="navbar-link" data-nav-toggler>Blog</a>
               </li>
@@ -56,6 +58,10 @@
               <ion-icon name="search-outline"></ion-icon>
             </button>
             @if(session()->has('user'))
+            <button class="header-action-btn" aria-label="notification" data-search-toggler>
+                <a class="text-danger" href="{{route('notification')}}"> <ion-icon name="notifications-outline">{{ $reservationCount }}</ion-icon></a>
+            </button>
+
             <li class="navbar-item">
                 <a href="{{route('add')}}" class="navbar-link" data-nav-toggler>Add Book</a>
               </li>

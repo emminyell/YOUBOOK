@@ -5,6 +5,10 @@ use App\Models\Book;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+
+
 
 class BookController extends Controller
 {
@@ -72,20 +76,65 @@ class BookController extends Controller
         return redirect()->route('afficher');
     }
 
+    public function reserveBook(Request $request, $bookId)
+    {
+        $user = $request->session()->get('user');
 
-public function reserveBook($bookId)
-{
-    $book = new Reservation();
-    $book->id_book = $bookId;
-    $book->id_user = 1;
-    $book->save();
+        if (!$user) {
+            return redirect()->route('login');
+        }
 
-    return redirect()->route('reservations');
-}
+        $userId = $user->id;
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        // Validate start and end dates
+        $validator = Validator::make($request->all(), [
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after:start_date',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        // Check if the book is available for reservation during the specified period
+        $existingReservation = Reservation::where('id_book', $bookId)
+            ->where(function ($query) use ($startDate, $endDate) {
+                $query->whereBetween('start_date', [$startDate, $endDate])
+                      ->orWhereBetween('end_date', [$startDate, $endDate])
+                      ->orWhere(function ($query) use ($startDate, $endDate) {
+                          $query->where('start_date', '<=', $startDate)
+                                ->where('end_date', '>=', $endDate);
+                      });
+            })
+            ->exists();
+
+        if ($existingReservation) {
+            return redirect()->back()->withErrors(['error' => 'The book is not available during the specified period.'])->withInput();
+        }
+
+        // Create a new reservation
+        $reservation = new Reservation();
+        $reservation->id_book = $bookId;
+        $reservation->id_user = $userId;
+        $reservation->start_date = $startDate;
+        $reservation->end_date = $endDate;
+        $reservation->save();
+
+        return redirect()->route('reservations');
+    }
+
 
 public function reservedBooks()
 {
-    $userId = 1;
+    $user = session('user');
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    $userId = $user->id;
 
     $user = User::find($userId);
 
@@ -93,6 +142,7 @@ public function reservedBooks()
 
     return view('reservations', compact('reservedBooks'));
 }
+
 
 public function details($id)
 {
@@ -102,21 +152,40 @@ public function details($id)
 
 public function unreserveBook($bookId)
 {
-    $userId = 1;
+    $user = session('user');
+
+    if (!$user) {
+        return redirect()->route('login');
+    }
+
+    $userId = $user->id;
 
     $user = User::find($userId);
 
     $reservation = $user->reservations()->where('id_book', $bookId)->first();
 
-
     if ($reservation) {
-
         $reservation->delete();
-
-
-        return redirect()->route('reservations');
-    } else {
-        return redirect()->route('reservations');
     }
+
+    return redirect()->route('reservations');
 }
+
+// Controller method to display books in the library page
+public function library()
+{
+    // Query available books (books that haven't been reserved)
+    $disponibleBooks = Book::whereDoesntHave('reservations')->get();
+
+    // Query reserved books and order them by return date
+    $reservedBooks = Reservation::with('book')
+    ->where('end_date', '>', date('Y-m-d H:i:s'))
+    ->orderBy('end_date')
+    ->get();
+
+
+    return view('library', compact('disponibleBooks', 'reservedBooks'));
 }
+
+}
+

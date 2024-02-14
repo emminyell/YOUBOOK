@@ -223,7 +223,7 @@
                       <a href="#">Data Sciences</a>
                     </h3>
 
-                    <span class="card-meta">39 Course</span>
+                    <span class="card-meta">39 Book</span>
                   </div>
 
                 </div>
@@ -241,7 +241,7 @@
                       <a href="#">Health & Fitness</a>
                     </h3>
 
-                    <span class="card-meta">39 Course</span>
+                    <span class="card-meta">39 Book</span>
                   </div>
 
                 </div>
@@ -350,9 +350,9 @@
           style="background-image: url('./assets/images/course-bg.jpg')">
           <div class="container">
 
-            <p class="section-subtitle">Popular Books</p>
+            <p class="section-subtitle">Popular AudioBooks</p>
 
-            <h2 class="h2 section-title">Our Popular Books</h2>
+            <h2 class="h2 section-title">Our Popular AudioBooks</h2>
 
             <ul class="grid-list">
 
